@@ -15,6 +15,7 @@ impl Solution {
                 return vec![l as i32 + 1, r as i32 + 1]
             }
         }
+        
         return vec![0, 0]
     }
 }
