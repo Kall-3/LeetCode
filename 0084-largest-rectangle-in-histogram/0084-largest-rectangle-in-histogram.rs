@@ -15,7 +15,7 @@ impl Solution {
                     max = area;
                 }
             }
-
+            
             // Add new element to stack, and extend it back as many times as we poped elements i.e. before limited
             stack.push((old_idx, *hgt));
         }
@@ -28,6 +28,7 @@ impl Solution {
             }
         }
 
+        // Return max
         max
     }
 }
