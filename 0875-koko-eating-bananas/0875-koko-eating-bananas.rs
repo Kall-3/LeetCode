@@ -17,7 +17,7 @@ impl Solution {
                     r = k - 1;
                     res = k;
                 },
-                Greater         => l = k + 1,
+                Greater => l = k + 1,
             }
         }
 
