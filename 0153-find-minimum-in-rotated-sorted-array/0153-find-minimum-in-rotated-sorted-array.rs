@@ -17,7 +17,6 @@ impl Solution {
                 Less            => r = m - 1,
             }
         }
-        
         res
     }
 }
