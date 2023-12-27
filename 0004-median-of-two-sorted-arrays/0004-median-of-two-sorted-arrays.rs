@@ -33,6 +33,7 @@ impl Solution {
                 snd += 1;
             }
         }
+        
         // Return median of centre element/-s
         if total % 2 == 1 {
             return res[res.len() - 1] as f64;
