@@ -10,7 +10,6 @@ impl Solution {
                 highest_profit = *price - lowest_price;
             }
         }
-        
 
         highest_profit
     }
