@@ -10,6 +10,7 @@ impl Solution {
                 set.pop_front();
             }
 
+            
             set.push_back(c);
             longest = longest.max(set.len());
         }
