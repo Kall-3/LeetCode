@@ -3,14 +3,10 @@ impl Solution {
         let mut lowest_price = i32::MAX;
         let mut highest_profit = 0;
 
-        for price in &prices {
-            if price < &lowest_price {
-                lowest_price = *price;
-            } else if price - &lowest_price > highest_profit {
-                highest_profit = *price - lowest_price;
-            }
+        for price in prices {
+            lowest_price = lowest_price.min(price);
+            highest_profit = highest_profit.max(price - lowest_price);
         }
-
         highest_profit
     }
 }
