@@ -52,7 +52,6 @@ impl Solution {
         if best.0 > -1 && best.1 > -1 {
             return s[best.0 as usize..=best.1 as usize].iter().collect::<String>()
         }
-        
         String::new()
     }
 }
