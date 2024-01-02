@@ -36,6 +36,7 @@ impl Solution {
         }
 
         current.next = list1.or(list2);
+        
 
         dummy.next
     }
