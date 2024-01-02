@@ -23,6 +23,7 @@ impl Solution {
             node.next = prev;
             prev = Some(node);
         }
+        
 
         prev
     }
