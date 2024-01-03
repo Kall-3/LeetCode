@@ -14,6 +14,7 @@
 //     }
 //   }
 // }
+
 impl Solution {
     pub fn remove_nth_from_end(mut head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
 
