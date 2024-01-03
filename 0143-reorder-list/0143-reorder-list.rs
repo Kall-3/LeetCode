@@ -20,7 +20,7 @@ use std::hint::unreachable_unchecked;
 impl Solution {
     pub fn reorder_list(head: &mut Option<Box<ListNode>>) {
         
-        // Find how many nodes are in the list;
+        // Find how many nodes are in the list
         let mut count = 0;
         let mut list = &*head;
 
