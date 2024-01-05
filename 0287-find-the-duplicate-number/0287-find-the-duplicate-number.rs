@@ -14,6 +14,7 @@ impl Solution {
             fast = nums[fast as usize];
         }
 
+        
         slow
     }
 }
