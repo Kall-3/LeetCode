@@ -46,7 +46,8 @@ impl Solution
                 heap.push(next);
             }
         }
-
+        
+        
         dummy.next
     }
 }
