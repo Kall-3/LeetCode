@@ -47,7 +47,6 @@ impl Solution
             }
         }
         
-        
         dummy.next
     }
 }
