@@ -1,6 +1,8 @@
 use std::rc::Rc;
 use std::cell::RefCell;
-impl Solution {
+
+impl Solution
+{
     pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32
     {
         if let Some(ref node) = root
