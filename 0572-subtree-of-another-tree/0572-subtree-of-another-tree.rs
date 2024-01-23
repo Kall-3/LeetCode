@@ -2,7 +2,6 @@ use std::collections::HashMap;
 use std::rc::Rc;
 use std::cell::RefCell;
 
-
 impl Solution
 {
     pub fn is_subtree(root: Option<Rc<RefCell<TreeNode>>>, sub_root: Option<Rc<RefCell<TreeNode>>>)
@@ -16,7 +15,6 @@ impl Solution
 
         // Calculate max-depths
         Solution::max_depth_save(root.clone(), &mut depths);
-        println!("sub_root d: {}", root_depth);
 
         // Find sub-tree
         Solution::is_subtree_rec(root, &sub_root, &depths, root_depth)
@@ -37,7 +35,6 @@ impl Solution
             {
                 if depth == &root_depth
                 {
-                    println!("depths match!");
                     if Solution::check_same(Some(node.clone()), sub_root)
                     {
                         return true
@@ -57,12 +54,10 @@ impl Solution
         sub_root: &Option<Rc<RefCell<TreeNode>>>,
     ) -> bool
     {
-        println!("Match start: {}, {}", root.is_some(), sub_root.is_some());
         match (root, sub_root) {
             (Some(root_node), Some(sub_node)) => {
                 if root_node.borrow().val == sub_node.borrow().val
                 {
-                    println!("r/s: {}, {}", root_node.borrow().val, sub_node.borrow().val);
                     return Solution::check_same(root_node.borrow().left.clone(), &sub_node.borrow().left.clone()) && Solution::check_same(root_node.borrow().right.clone(), &sub_node.borrow().right.clone());
                 }
             }
