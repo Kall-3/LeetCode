@@ -1,19 +1,25 @@
-use std::collections::HashMap;
-
 impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-        let mut map = HashMap::new();
+        let mut fst = 0;
+        let mut snd = nums.len() - 1;
 
-        for (i, n) in nums.into_iter().enumerate() {
-            let diff = target - n;
+        let mut sorted = nums.clone();
+        sorted.sort();
 
-            if let Some(&j) = map.get(&diff) {
-                return [i as i32, j as i32].to_vec();
+        while fst < snd {
+            let sum = sorted[fst] + sorted[snd];
+            if sum < target {
+                fst += 1;
+            } else if sum > target{
+                snd -= 1;
             } else {
-                map.insert(n, i);
+                break;
             }
         }
-        
-        vec![]
+
+        let fst = nums.iter().position(|&x| x == sorted[fst]).unwrap() as i32;
+        let snd = nums.iter().rposition(|&x| x == sorted[snd]).unwrap() as i32;
+        return vec![fst, snd];
+
     }
 }
