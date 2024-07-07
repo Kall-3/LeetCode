@@ -28,6 +28,7 @@ My leetcode submitions
 ## Dynamic Programming
 |  |
 | ------- |
+| [0022-generate-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0022-generate-parentheses) |
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
 ## Stack
 |  |
@@ -44,6 +45,7 @@ My leetcode submitions
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0020-valid-parentheses) |
+| [0022-generate-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0022-generate-parentheses) |
 ## Design
 |  |
 | ------- |
@@ -52,4 +54,8 @@ My leetcode submitions
 |  |
 | ------- |
 | [0150-evaluate-reverse-polish-notation](https://github.com/Kall-3/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
+## Backtracking
+|  |
+| ------- |
+| [0022-generate-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0022-generate-parentheses) |
 <!---LeetCode Topics End-->
