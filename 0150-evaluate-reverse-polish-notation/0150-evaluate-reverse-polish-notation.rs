@@ -1,43 +1,33 @@
 impl Solution {
     pub fn eval_rpn(tokens: Vec<String>) -> i32 {
-        let mut stack: Vec<i32> = Vec::new();
+        let mut stack = vec![];
 
-        for token in tokens.iter() {
-            if is_digit(token) {
-                stack.push(token.parse::<i32>().unwrap() );
-            } else if token == "+" {
-                let mut res = stack.pop().unwrap();
-
-                res = stack.pop().unwrap() + res;
-
-                stack.push(res);
-            } else if token == "-" {
-                let mut res = stack.pop().unwrap();
-
-                res = stack.pop().unwrap() - res;
-
-                stack.push(res);
-            } else if token == "*" {
-                let mut res = stack.pop().unwrap();
-
-                res = stack.pop().unwrap() * res;
-
-                stack.push(res);
-            } else if token == "/" {
-                let mut res = stack.pop().unwrap();
-
-                res = stack.pop().unwrap() / res;
-
-                stack.push(res);
+        for token in tokens {
+            match token.as_str() {
+                "+" => {
+                    let val1 = stack.pop().unwrap();
+                    let val2 = stack.pop().unwrap();
+                    stack.push(val1 + val2);
+                }
+                "-" => {
+                    let val1 = stack.pop().unwrap();
+                    let val2 = stack.pop().unwrap();
+                    stack.push(val2 - val1);
+                }
+                "*" => {
+                    let val1 = stack.pop().unwrap();
+                    let val2 = stack.pop().unwrap();
+                    stack.push(val1 * val2);
+                }
+                "/" => {
+                    let val1 = stack.pop().unwrap();
+                    let val2 = stack.pop().unwrap();
+                    stack.push(val2 / val1);
+                }
+                _ => stack.push(token.parse::<i32>().unwrap()),
             }
         }
-        *stack.last().unwrap()
-    }
-}
-
-fn is_digit(s: &str) -> bool {
-    match s.parse::<i32>() {
-        Ok(_)   => true,
-        Err(_)  => false,
+        
+        stack.pop().unwrap()
     }
 }
