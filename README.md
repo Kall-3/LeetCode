@@ -11,6 +11,7 @@ My leetcode submitions
 | [0015-3sum](https://github.com/Kall-3/LeetCode/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/Kall-3/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 ## Two Pointers
 |  |
 | ------- |
@@ -37,10 +38,12 @@ My leetcode submitions
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/Kall-3/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0155-min-stack](https://github.com/Kall-3/LeetCode/tree/master/0155-min-stack) |
+| [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 ## Monotonic Stack
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
+| [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 ## String
 |  |
 | ------- |
@@ -58,4 +61,8 @@ My leetcode submitions
 |  |
 | ------- |
 | [0022-generate-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0022-generate-parentheses) |
+## Hash Table
+|  |
+| ------- |
+| [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 <!---LeetCode Topics End-->
