@@ -33,9 +33,10 @@ impl MinStack {
     fn top(&self) -> i32 {
         *self.stack.last().unwrap_or(&0)
     }
-    
+
     fn get_min(&self) -> i32 {
         *self.min_stack.last().unwrap_or(&i32::MAX)
+    
     }
 }
 
