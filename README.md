@@ -14,6 +14,7 @@ My leetcode submitions
 | [0150-evaluate-reverse-polish-notation](https://github.com/Kall-3/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0739-daily-temperatures](https://github.com/Kall-3/LeetCode/tree/master/0739-daily-temperatures) |
+| [0792-binary-search](https://github.com/Kall-3/LeetCode/tree/master/0792-binary-search) |
 | [0883-car-fleet](https://github.com/Kall-3/LeetCode/tree/master/0883-car-fleet) |
 ## Two Pointers
 |  |
@@ -75,4 +76,8 @@ My leetcode submitions
 |  |
 | ------- |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
+## Binary Search
+|  |
+| ------- |
+| [0792-binary-search](https://github.com/Kall-3/LeetCode/tree/master/0792-binary-search) |
 <!---LeetCode Topics End-->
