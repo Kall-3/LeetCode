@@ -13,6 +13,7 @@ My leetcode submitions
 | [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0084-largest-rectangle-in-histogram](https://github.com/Kall-3/LeetCode/tree/master/0084-largest-rectangle-in-histogram) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/Kall-3/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0153-find-minimum-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0739-daily-temperatures](https://github.com/Kall-3/LeetCode/tree/master/0739-daily-temperatures) |
 | [0792-binary-search](https://github.com/Kall-3/LeetCode/tree/master/0792-binary-search) |
@@ -82,6 +83,7 @@ My leetcode submitions
 |  |
 | ------- |
 | [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
+| [0153-find-minimum-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0792-binary-search](https://github.com/Kall-3/LeetCode/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/Kall-3/LeetCode/tree/master/0907-koko-eating-bananas) |
 ## Matrix
