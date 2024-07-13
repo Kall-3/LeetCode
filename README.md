@@ -10,6 +10,7 @@ My leetcode submitions
 | [0011-container-with-most-water](https://github.com/Kall-3/LeetCode/tree/master/0011-container-with-most-water) |
 | [0015-3sum](https://github.com/Kall-3/LeetCode/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
+| [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0084-largest-rectangle-in-histogram](https://github.com/Kall-3/LeetCode/tree/master/0084-largest-rectangle-in-histogram) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/Kall-3/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
@@ -79,5 +80,10 @@ My leetcode submitions
 ## Binary Search
 |  |
 | ------- |
+| [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0792-binary-search](https://github.com/Kall-3/LeetCode/tree/master/0792-binary-search) |
+## Matrix
+|  |
+| ------- |
+| [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 <!---LeetCode Topics End-->
