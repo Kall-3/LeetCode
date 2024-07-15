@@ -9,6 +9,7 @@ My leetcode submitions
 | ------- |
 | [0011-container-with-most-water](https://github.com/Kall-3/LeetCode/tree/master/0011-container-with-most-water) |
 | [0015-3sum](https://github.com/Kall-3/LeetCode/tree/master/0015-3sum) |
+| [0033-search-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0033-search-in-rotated-sorted-array) |
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
 | [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0084-largest-rectangle-in-histogram](https://github.com/Kall-3/LeetCode/tree/master/0084-largest-rectangle-in-histogram) |
@@ -82,6 +83,7 @@ My leetcode submitions
 ## Binary Search
 |  |
 | ------- |
+| [0033-search-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0033-search-in-rotated-sorted-array) |
 | [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0792-binary-search](https://github.com/Kall-3/LeetCode/tree/master/0792-binary-search) |
