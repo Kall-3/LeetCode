@@ -1,40 +1,29 @@
-use std::cmp::Ordering::{Greater, Less, Equal};
-
 impl Solution {
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
-        let (mut l, mut r) = (0, nums.len() - 1);
+        let (mut left, mut right) = (0, nums.len() as i32 - 1);
 
-        while l <= r {
-            // Middle of remainder
-            let m = l + (r - l) / 2;
+        while left <= right {
+            let mid = (left + right) / 2;
 
-            // Found element
-            if nums[m] == target {
-                return m as i32;
-            }
-
-            // Left side sorted
-            if nums[l] <= nums[m] {
-                if nums[l] <= target && target <= nums[m] {
-                    // On left side
-                    r = m - 1;
+            if nums[mid as usize] == target {
+                return mid;
+            } else if nums[left as usize] <= nums[mid as usize] {
+                // left part is sorted
+                if nums[left as usize] <= target && target < nums[mid as usize] {
+                    right = mid - 1;
                 } else {
-                    // On right side
-                    l = m + 1;
+                    left = mid + 1;
                 }
-            }
-            // Right side sorted
-            else {
-                if nums[m] < target && target <= nums[r] {
-                    // On right side
-                    l = m + 1;
+            } else {
+                // right part is sorted
+                if nums[mid as usize] < target && target <= nums[right as usize] {
+                    left = mid + 1;
                 } else {
-                    // On left side
-                    r = m - 1;
+                    right = mid - 1;
                 }
             }
         }
-        
+
         -1
     }
 }
