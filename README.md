@@ -64,10 +64,12 @@ My leetcode submitions
 | ------- |
 | [0020-valid-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0020-valid-parentheses) |
 | [0022-generate-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0022-generate-parentheses) |
+| [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
 ## Design
 |  |
 | ------- |
 | [0155-min-stack](https://github.com/Kall-3/LeetCode/tree/master/0155-min-stack) |
+| [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
 ## Math
 |  |
 | ------- |
@@ -80,6 +82,7 @@ My leetcode submitions
 |  |
 | ------- |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
+| [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
 ## Binary Search
 |  |
 | ------- |
@@ -88,6 +91,7 @@ My leetcode submitions
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0792-binary-search](https://github.com/Kall-3/LeetCode/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/Kall-3/LeetCode/tree/master/0907-koko-eating-bananas) |
+| [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
 ## Matrix
 |  |
 | ------- |
