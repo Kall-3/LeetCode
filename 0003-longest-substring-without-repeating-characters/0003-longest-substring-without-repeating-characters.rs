@@ -16,6 +16,6 @@ impl Solution {
             res = res.max(i - left + 1);
         }
 
-        res.max(s.len() - left) as i32
+        res as i32
     }
 }
