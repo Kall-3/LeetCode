@@ -1,16 +1,16 @@
 impl Solution {
     pub fn max_profit(prices: Vec<i32>) -> i32 {
-        use std::cmp::min;
-        use std::cmp::max;
+        let mut lowest_price = i32::MAX;
+        let mut highest_profit = 0;
 
-        let mut buy = prices[0];
-        let mut profit = 0;
-
-        for price in prices {
-            profit = max(profit, price - buy);
-            buy = min(buy, price);
+        for price in &prices {
+            if price < &lowest_price {
+                lowest_price = *price;
+            } else if price - &lowest_price > highest_profit {
+                highest_profit = *price - lowest_price;
+            }
         }
 
-        profit
+        highest_profit
     }
 }
