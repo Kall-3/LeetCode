@@ -10,6 +10,7 @@ My leetcode submitions
 | [0011-container-with-most-water](https://github.com/Kall-3/LeetCode/tree/master/0011-container-with-most-water) |
 | [0015-3sum](https://github.com/Kall-3/LeetCode/tree/master/0015-3sum) |
 | [0033-search-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0033-search-in-rotated-sorted-array) |
+| [0036-valid-sudoku](https://github.com/Kall-3/LeetCode/tree/master/0036-valid-sudoku) |
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
 | [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0084-largest-rectangle-in-histogram](https://github.com/Kall-3/LeetCode/tree/master/0084-largest-rectangle-in-histogram) |
@@ -86,6 +87,7 @@ My leetcode submitions
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/Kall-3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0036-valid-sudoku](https://github.com/Kall-3/LeetCode/tree/master/0036-valid-sudoku) |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
 ## Binary Search
@@ -100,6 +102,7 @@ My leetcode submitions
 ## Matrix
 |  |
 | ------- |
+| [0036-valid-sudoku](https://github.com/Kall-3/LeetCode/tree/master/0036-valid-sudoku) |
 | [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 ## Sliding Window
 |  |
