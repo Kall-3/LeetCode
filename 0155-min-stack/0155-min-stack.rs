@@ -15,6 +15,7 @@ impl MinStack {
             stack: vec![],
             min_stack: vec![],
         }
+        
     }
     
     fn push(&mut self, val: i32) {
