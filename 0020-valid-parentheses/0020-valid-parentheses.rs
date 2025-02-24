@@ -11,7 +11,6 @@ impl Solution {
                 _ => (),
             }
         }
-
         stack.is_empty()
     }
 }
