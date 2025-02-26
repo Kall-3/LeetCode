@@ -29,6 +29,7 @@ My leetcode submitions
 | [0011-container-with-most-water](https://github.com/Kall-3/LeetCode/tree/master/0011-container-with-most-water) |
 | [0015-3sum](https://github.com/Kall-3/LeetCode/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
+| [0125-valid-palindrome](https://github.com/Kall-3/LeetCode/tree/master/0125-valid-palindrome) |
 ## Sorting
 |  |
 | ------- |
@@ -69,6 +70,7 @@ My leetcode submitions
 | [0003-longest-substring-without-repeating-characters](https://github.com/Kall-3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0020-valid-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0020-valid-parentheses) |
 | [0022-generate-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0022-generate-parentheses) |
+| [0125-valid-palindrome](https://github.com/Kall-3/LeetCode/tree/master/0125-valid-palindrome) |
 | [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
 ## Design
 |  |
