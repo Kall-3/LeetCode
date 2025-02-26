@@ -1,33 +1,24 @@
 impl Solution {
-    pub fn largest_rectangle_area(heights: Vec<i32>) -> i32 {
-        let mut stack: Vec<(i32, i32)> = Vec::new();
-        let mut max = 0;
+    pub fn largest_rectangle_area(mut heights: Vec<i32>) -> i32 {
+        heights.push(0);
+        heights.insert(0, 0);
 
-        for (idx, hgt) in heights.iter().enumerate() {
-            let (mut old_idx, mut old_hgt) = (idx as i32, 0);
+        let mut stack: Vec<usize> = Vec::new();
+        stack.push(0);
 
-            // New height limits area
-            while stack.len() > 0 && &stack[stack.len() - 1].1 > hgt {
-                (old_idx, old_hgt) = stack.pop().unwrap();
-                let area = old_hgt * (idx as i32 - old_idx);
+        let mut max_area = 0;
 
-                if area > max {
-                    max = area;
-                }
+        for i in 1..heights.len() {
+            while heights[*stack.last().unwrap()] > heights[i] {
+                let height = heights[stack.pop().unwrap()];
+                let width = i - stack.last().unwrap() - 1;
+
+                max_area = max_area.max(height * width as i32);
             }
 
-            // Add new element to stack, and extend it back as many times as we poped elements i.e. before limited
-            stack.push((old_idx, *hgt));
+            stack.push(i);
         }
 
-        // Calculate area of remaining elements on stack, that extend all way back
-        for (idx, hgt) in stack.iter() {
-            let area = hgt * (heights.len() as i32 - idx);
-            if area > max {
-                max = area;
-            }
-        }
-
-        max
+        max_area
     }
 }
