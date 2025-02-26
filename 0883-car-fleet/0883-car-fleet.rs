@@ -1,21 +1,22 @@
 impl Solution {
-    pub fn car_fleet(target: i32, mut position: Vec<i32>, mut speed: Vec<i32>) -> i32 {
-        let mut cars: Vec<(i32, i32)> = position
-            .into_iter()
-            .zip(speed.into_iter())
-            .collect();
+    pub fn car_fleet(target: i32, position: Vec<i32>, speed: Vec<i32>) -> i32 {
+        let mut cars: Vec<(i32, i32)> = position.into_iter().zip(speed.into_iter()).collect();
 
-        cars.sort_unstable_by_key(|ps| ps.0);
+        cars.sort_by(|a, b| a.0.cmp(&b.0));
 
-        let mut fleets: i32 = 0;
-        let mut curr_time: f32 = 0.0;
+        let mut fleets = 1;
 
-        for (pos, spd) in cars.into_iter().rev() {
-            let time = (target - pos) as f32 / spd as f32;
-        
-            if time > curr_time {
-                fleets += 1;
-                curr_time = time;
+        while let Some((p1, s1)) = cars.pop() {
+            while let Some((p2, s2)) = cars.last() {
+                let t1 = (target - p1) as f32 / s1.clone() as f32;
+                let t2 = (target - p2) as f32 / s2.clone() as f32;
+
+                if t2 > t1 {
+                    fleets += 1;
+                    break;
+                } else {
+                    cars.pop();
+                }
             }
         }
 
