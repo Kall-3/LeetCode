@@ -1,9 +1,20 @@
 impl Solution {
     pub fn is_palindrome(s: String) -> bool {
-        let word: Vec<_> = s.chars()
-                            .filter_map(|c| c.is_ascii_alphanumeric().then(|| c.to_lowercase().to_string() ))
-                            .collect();
+        let mut s: Vec<char> = s.to_lowercase()
+            .chars()
+            .filter(|&a| a.is_alphanumeric())
+            .collect();
 
-        word.iter().eq(word.iter().rev())
+        let (mut l, mut r) = (0, s.len());
+
+        while l < r {
+            if s[l] != s[r - 1] {
+                return false;
+            }
+            l += 1;
+            r -= 1;
+        }
+
+        true
     }
 }
