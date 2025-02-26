@@ -17,6 +17,7 @@ My leetcode submitions
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/Kall-3/LeetCode/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/Kall-3/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
+| [0167-two-sum-ii-input-array-is-sorted](https://github.com/Kall-3/LeetCode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0238-product-of-array-except-self](https://github.com/Kall-3/LeetCode/tree/master/0238-product-of-array-except-self) |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0739-daily-temperatures](https://github.com/Kall-3/LeetCode/tree/master/0739-daily-temperatures) |
@@ -30,6 +31,7 @@ My leetcode submitions
 | [0015-3sum](https://github.com/Kall-3/LeetCode/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
 | [0125-valid-palindrome](https://github.com/Kall-3/LeetCode/tree/master/0125-valid-palindrome) |
+| [0167-two-sum-ii-input-array-is-sorted](https://github.com/Kall-3/LeetCode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 ## Sorting
 |  |
 | ------- |
@@ -98,6 +100,7 @@ My leetcode submitions
 | [0033-search-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0033-search-in-rotated-sorted-array) |
 | [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
+| [0167-two-sum-ii-input-array-is-sorted](https://github.com/Kall-3/LeetCode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0792-binary-search](https://github.com/Kall-3/LeetCode/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/Kall-3/LeetCode/tree/master/0907-koko-eating-bananas) |
 | [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
