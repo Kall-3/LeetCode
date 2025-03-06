@@ -1,26 +1,31 @@
 impl Solution {
-    pub fn min_eating_speed(piles: Vec<i32>, h: i32) -> i32 {
-        //let mut k_min = (piles.iter().sum::<i32>() / h).max(1);
-        let mut k_min = 1;
-        let mut k_max = *piles.iter().max().unwrap();
+    pub fn min_eating_speed(mut piles: Vec<i32>, h: i32) -> i32 {
+        let mut high = *piles.iter().max().unwrap();
+        let mut low = 1;
 
-        while k_min < k_max {
-            let k_mid = (k_min + k_max) / 2;
+        if piles.len() == h as usize {
+            return high;
+        }
 
-            if !Self::can_finish(&piles, h, k_mid) {
-                k_min = k_mid + 1;
+        while low <= high {
+            let k = (low + high) / 2;
+            let mut time = 0;
+
+            for pile in piles.iter() {
+                time += (pile + k - 1) / k;
+
+                if time > h {
+                    break;
+                }
+            }
+
+            if time <= h {
+                high = k - 1;
             } else {
-                k_max = k_mid;
+                low = k + 1;
             }
         }
 
-        k_min
-    }
-
-    fn can_finish(piles: &Vec<i32>, mut h: i32, k_mid: i32) -> bool {
-        for &p in piles {
-            h -= ((p - 1) / k_mid) + 1;
-        }
-        h >= 0
+        return low;
     }
 }
