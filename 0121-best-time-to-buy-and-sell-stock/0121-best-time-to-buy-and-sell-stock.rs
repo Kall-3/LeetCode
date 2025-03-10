@@ -1,16 +1,22 @@
+use std::collections::HashMap;
+
 impl Solution {
     pub fn max_profit(prices: Vec<i32>) -> i32 {
-        let mut lowest_price = i32::MAX;
-        let mut highest_profit = 0;
+        if prices.len() == 1 {
+            return 0;
+        }
 
-        for price in &prices {
-            if price < &lowest_price {
-                lowest_price = *price;
-            } else if price - &lowest_price > highest_profit {
-                highest_profit = *price - lowest_price;
+        let mut left = 0;
+        let mut best = 0;
+
+        for i in 1..prices.len() {
+            best = best.max(prices[i] - prices[left]);
+
+            if prices[left] > prices[i] {
+                left = i;
             }
         }
 
-        highest_profit
+        best
     }
 }
