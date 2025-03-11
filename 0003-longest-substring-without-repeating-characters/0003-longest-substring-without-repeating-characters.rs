@@ -10,12 +10,10 @@ impl Solution {
         let mut max = 0;
 
         for (i, c) in s.into_iter().enumerate() {
-            //println!("({}, {})", i, c);
             if let Some(j) = map.insert(c, i) {
                 left = left.max(j + 1);
-                //println!("new left: {}", left);
             }
-            //println!("max = {}, i - left = {}", max, i - left);
+            
             max = max.max(i + 1 - left);
         }
 
