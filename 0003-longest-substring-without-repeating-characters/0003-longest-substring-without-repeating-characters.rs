@@ -8,11 +8,10 @@ impl Solution {
         let mut left = 0;
         let mut max = 0;
 
-        for (i, c) in s.chars().enumerate() {
+        for (i, c) in s.chars().into_iter().enumerate() {
             if let Some(j) = map.insert(c, i) {
                 left = left.max(j + 1);
             }
-
             max = max.max(i + 1 - left);
         }
 
