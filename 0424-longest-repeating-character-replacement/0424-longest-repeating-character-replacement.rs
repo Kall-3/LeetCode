@@ -2,22 +2,27 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn character_replacement(s: String, k: i32) -> i32 {
-        let s: Vec<char> = s.chars().collect();
-        let (mut max_occ, mut l, mut res) = (0, 0, 0);
-        let mut count: HashMap<char, u64> = HashMap::with_capacity(26);
 
-        for r in 0..s.len() {
-            *count.entry(s[r]).or_default() += 1;
-            max_occ = max_occ.max(*count.get(&s[r]).unwrap());
+        let s: Vec<char> = s.chars().into_iter().collect();
 
-            while (r - l + 1) - max_occ as usize > k as usize {
-                *count.get_mut(&s[l]).unwrap() -= 1;
-                l += 1;
+        let mut map = [0; 26];
+        let mut left = 0;
+        let mut max_count = 0;
+        let mut max = 0;
+
+        for (right, c) in s.iter().enumerate() {
+
+            map[*c as usize - 'A' as usize] += 1;
+            max_count = max_count.max(map[*c as usize - 'A' as usize]);
+
+            while right + 1 - left - max_count > k as usize {
+                map[s[left] as usize - 'A' as usize] -= 1;
+                left += 1;
             }
 
-            res = res.max(r - l + 1);
+            max = max.max(right + 1 - left);
         }
 
-        res as i32
+        max as i32
     }
 }
