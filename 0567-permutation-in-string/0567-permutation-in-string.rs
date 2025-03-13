@@ -2,22 +2,28 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn check_inclusion(s1: String, s2: String) -> bool {
-        if s1.len() > s2.len() { return false }
+        let mut target = vec![0; 26];
+        let len = s1.len();
 
-        let mut mapping: [i16; 26] = [0; 26];
-        
-        s1.as_bytes().iter().for_each(|&x| mapping[(x - b'a') as usize] -= 1);
-        s2[0..s1.len()].as_bytes().iter().for_each(|&x| mapping[(x - b'a') as usize] += 1);
+        for c in s1.chars() {
+            target[c as usize - 'a' as usize] -= 1;
+        }
+        for c in s2.chars().take(len) {
+            target[c as usize - 'a' as usize] += 1;
+        }
+        if target.iter().all(|&c| c == 0)  {
+            return true;
+        }
 
-        if mapping.iter().all(|&x| x == 0) { return true }
+        let chars: Vec<char> = s2.chars().collect();
 
-        let s2 = s2.as_bytes();
+        for (i, c) in s2.chars().enumerate().skip(len) {
+            target[c as usize - 'a' as usize] += 1;
+            target[chars[i - len] as usize - 'a' as usize] -= 1;
 
-        for r in s1.len()..s2.len() {
-            mapping[(s2[r] -b'a') as usize] += 1;
-            mapping[(s2[r - s1.len()] -b'a') as usize] -= 1;
-
-            if mapping.iter().all(|&x| x == 0) { return true }
+            if target.iter().all(|&c| c == 0) {
+                return true;
+            }
         }
 
         false
