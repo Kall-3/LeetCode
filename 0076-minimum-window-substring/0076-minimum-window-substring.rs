@@ -1,57 +1,45 @@
-use std::collections::HashMap;
-
 impl Solution {
     pub fn min_window(s: String, t: String) -> String {
-        if s.len() < t.len() { return "".to_string() }
+        if s.len() < t.len() {
+            return String::new();
+        }
 
-        let s: Vec<char> = s.chars().collect();
+        let s_bytes = s.as_bytes();
+        let mut map = [0; 128];
+        let mut count = t.len();
+        let mut start = 0;
+        let mut min_start = 0;
+        let mut min_len = usize::MAX;
 
-        let mut tCount: HashMap<char, i32> = HashMap::with_capacity(52);
-        let mut window: HashMap<char, i32> = HashMap::with_capacity(52);
+        for c in t.into_bytes() {
+            map[c as usize] -= 1;
+        }
 
-        // Reference to needed chars in tCount
-        t.chars().for_each(|x| *tCount.entry(x).or_default() += 1);
+        for end in 0..s.len() {
+            if map[s_bytes[end] as usize] < 0 {
+                count -= 1;
+            }
+            map[s_bytes[end] as usize] += 1;
 
-        let mut best_len = usize::MAX;
-        let mut best = (-1 as i32, -1 as i32);
-        let mut l = 0;
-
-        let (mut have, need) = (0, tCount.len());
-    
-        for r in 0..s.len() {
-
-            let char = s[r];
-
-            // Add new element on the right
-            *window.entry(char).or_default() += 1;
-            have += (window.get(&char) == tCount.get(&char)) as usize;
-            
-           // If mapping contains all t chars, move left pointer until we dont and save best result
-           while have == need {
-
-                // Save if best
-                if (r - l + 1) < best_len {
-                    best_len = (r - l + 1);
-                    best = (l as i32, r as i32);
+            while count == 0 {
+                if end - start < min_len {
+                    min_start = start;
+                    min_len = end - start;
                 }
 
-                // Remove elements
-                *window.get_mut(&s[l]).unwrap() -= 1;
-
-                // Check if condition is still met
-                if window.get(&s[l]) < tCount.get(&s[l]) {
-                    have -= 1;
+                map[s_bytes[start] as usize] -= 1;
+                if map[s_bytes[start] as usize] < 0 {
+                    count += 1;
                 }
 
-                // Move pointer
-                l += 1;
+                start += 1;
             }
         }
 
-
-        if best.0 > -1 && best.1 > -1 {
-            return s[best.0 as usize..=best.1 as usize].iter().collect::<String>()
+        if min_len < usize::MAX {
+            s[min_start..=min_start + min_len].to_string()
+        } else {
+            String::new()
         }
-        String::new()
     }
 }
