@@ -2,35 +2,26 @@ use std::collections::VecDeque;
 
 impl Solution {
     pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
+        let k = k as usize;
+
+        let mut stack: VecDeque<(usize, i32)> = VecDeque::new();
         let mut res: Vec<i32> = Vec::new();
-        let mut queue: VecDeque<usize> = VecDeque::with_capacity(k as usize);
 
-        let (mut l, mut r) = (0, 0);
+        for i in 0..nums.len() {
+            while !stack.is_empty() && nums[i] > stack.back().unwrap().1 {
+                stack.pop_back();
+            }
+            stack.push_back((i, nums[i]));
 
-        while r < nums.len() {
-
-            while let Some(back) = queue.back() {
-                if nums[r] > nums[*back] {
-                    queue.pop_back();
-                } else {
-                    break;
-                }
+            if stack.front().unwrap().0 + k < i + 1 {
+                stack.pop_front();
             }
 
-            queue.push_back(r);
-
-            if l > *queue.front().unwrap() {
-                queue.pop_front();
+            if i + 2 > k {
+                res.push(stack.front().unwrap().1);
             }
-
-            if r + 1 >= k as usize {
-                res.push(nums[*queue.front().unwrap()]);
-                l += 1;
-            }
-
-            r += 1;
         }
-        
+
         res
     }
 }
