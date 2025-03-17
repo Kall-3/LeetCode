@@ -73,6 +73,7 @@ My leetcode submitions
 | [0003-longest-substring-without-repeating-characters](https://github.com/Kall-3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0020-valid-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0020-valid-parentheses) |
 | [0022-generate-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0022-generate-parentheses) |
+| [0076-minimum-window-substring](https://github.com/Kall-3/LeetCode/tree/master/0076-minimum-window-substring) |
 | [0125-valid-palindrome](https://github.com/Kall-3/LeetCode/tree/master/0125-valid-palindrome) |
 | [0424-longest-repeating-character-replacement](https://github.com/Kall-3/LeetCode/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/Kall-3/LeetCode/tree/master/0567-permutation-in-string) |
@@ -95,6 +96,7 @@ My leetcode submitions
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/Kall-3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0036-valid-sudoku](https://github.com/Kall-3/LeetCode/tree/master/0036-valid-sudoku) |
+| [0076-minimum-window-substring](https://github.com/Kall-3/LeetCode/tree/master/0076-minimum-window-substring) |
 | [0424-longest-repeating-character-replacement](https://github.com/Kall-3/LeetCode/tree/master/0424-longest-repeating-character-replacement) |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0567-permutation-in-string](https://github.com/Kall-3/LeetCode/tree/master/0567-permutation-in-string) |
@@ -118,6 +120,7 @@ My leetcode submitions
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/Kall-3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0076-minimum-window-substring](https://github.com/Kall-3/LeetCode/tree/master/0076-minimum-window-substring) |
 | [0424-longest-repeating-character-replacement](https://github.com/Kall-3/LeetCode/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/Kall-3/LeetCode/tree/master/0567-permutation-in-string) |
 ## Prefix Sum
