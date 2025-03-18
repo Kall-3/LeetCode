@@ -16,27 +16,30 @@
 // }
 impl Solution {
     pub fn merge_two_lists(mut list1: Option<Box<ListNode>>, mut list2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+        if list1.is_none() {
+            return list2;
+        }
+        if list2.is_none() {
+            return list1;
+        }
 
-        let mut dummy = ListNode::new(0);
-        let mut current = &mut dummy;
+        let mut head = Box::new(ListNode::new(0));
+        let mut current = &mut head;
 
-        while list1.is_some() && list2.is_some() {
-            let val1 = list1.as_mut().unwrap().val;
-            let val2 = list2.as_mut().unwrap().val;
-            
-            if val1 <= val2 {
+        while let (Some(node1_ref), Some(node2_ref)) = (list1.as_ref(), list2.as_ref()) {
+            if node1_ref.val < node2_ref.val {
                 current.next = list1.take();
-                list1 = current.next.as_mut().unwrap().next.take();
+                current = current.next.as_mut().unwrap();
+                list1 = current.next.take();
             } else {
                 current.next = list2.take();
-                list2 = current.next.as_mut().unwrap().next.take();
+                current = current.next.as_mut().unwrap();
+                list2 = current.next.take();
             }
-
-            current = current.next.as_mut().unwrap();
         }
 
         current.next = list1.or(list2);
 
-        dummy.next
+        head.next
     }
 }
