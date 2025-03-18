@@ -141,4 +141,12 @@ My leetcode submitions
 |  |
 | ------- |
 | [0239-sliding-window-maximum](https://github.com/Kall-3/LeetCode/tree/master/0239-sliding-window-maximum) |
+## Linked List
+|  |
+| ------- |
+| [0206-reverse-linked-list](https://github.com/Kall-3/LeetCode/tree/master/0206-reverse-linked-list) |
+## Recursion
+|  |
+| ------- |
+| [0206-reverse-linked-list](https://github.com/Kall-3/LeetCode/tree/master/0206-reverse-linked-list) |
 <!---LeetCode Topics End-->
