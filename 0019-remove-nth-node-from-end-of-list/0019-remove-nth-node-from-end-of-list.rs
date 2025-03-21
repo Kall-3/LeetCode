@@ -14,47 +14,32 @@
 //     }
 //   }
 // }
-
 impl Solution {
     pub fn remove_nth_from_end(mut head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
+        let mut new_head = Some(Box::new(ListNode::new(0)));
+        new_head.as_mut().unwrap().next = head.take();
 
-        // Find size of list
-        let mut current = &mut head;
-        let mut size = 0;
+        let mut current = new_head.as_ref().unwrap().next.as_ref();
+        let mut c = 0;
 
         while let Some(node) = current {
-            current = &mut node.next;
-            size += 1;
+            current = node.next.as_ref();
+            c += 1;
         }
-        
-        // Exit if size smaller than target
-        if size < n {
-            return head;
-        }
-        // If the list is too short
-        if size < 2 {
+
+        if c < 2 {
             return None;
-        } 
-        // If we need to remove the head of the list
-        if size == n {
-            return head.unwrap().next;
-        }
-        
-        // Find predecessor to n-th element
-        let n = size - n;
-        let mut current = &mut head;
-
-        for _ in 0..n-1 {
-            // SAFETY: Know size so never out of bounds
-            current = &mut current.as_mut().unwrap().next;
         }
 
-        // Move next pointer to skip over n-th element
-        if let Some(prev) = current {
-            let node = prev.next.take();
-            prev.next = node.unwrap().next;
+        let mut current = new_head.as_mut();
+
+        for _ in 0..(c - n) {
+            current = current.unwrap().next.as_mut();
         }
 
-        head
+        let next_node = current.as_mut().unwrap().next.take();
+        current.as_mut().unwrap().next = next_node.and_then(|n| n.next);
+
+        new_head.unwrap().next
     }
 }
