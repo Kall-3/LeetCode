@@ -32,6 +32,7 @@ My leetcode submitions
 | [0015-3sum](https://github.com/Kall-3/LeetCode/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
 | [0125-valid-palindrome](https://github.com/Kall-3/LeetCode/tree/master/0125-valid-palindrome) |
+| [0143-reorder-list](https://github.com/Kall-3/LeetCode/tree/master/0143-reorder-list) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/Kall-3/LeetCode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0567-permutation-in-string](https://github.com/Kall-3/LeetCode/tree/master/0567-permutation-in-string) |
 ## Sorting
@@ -55,6 +56,7 @@ My leetcode submitions
 | [0020-valid-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0020-valid-parentheses) |
 | [0042-trapping-rain-water](https://github.com/Kall-3/LeetCode/tree/master/0042-trapping-rain-water) |
 | [0084-largest-rectangle-in-histogram](https://github.com/Kall-3/LeetCode/tree/master/0084-largest-rectangle-in-histogram) |
+| [0143-reorder-list](https://github.com/Kall-3/LeetCode/tree/master/0143-reorder-list) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/Kall-3/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0155-min-stack](https://github.com/Kall-3/LeetCode/tree/master/0155-min-stack) |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
@@ -145,10 +147,12 @@ My leetcode submitions
 |  |
 | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/Kall-3/LeetCode/tree/master/0021-merge-two-sorted-lists) |
+| [0143-reorder-list](https://github.com/Kall-3/LeetCode/tree/master/0143-reorder-list) |
 | [0206-reverse-linked-list](https://github.com/Kall-3/LeetCode/tree/master/0206-reverse-linked-list) |
 ## Recursion
 |  |
 | ------- |
 | [0021-merge-two-sorted-lists](https://github.com/Kall-3/LeetCode/tree/master/0021-merge-two-sorted-lists) |
+| [0143-reorder-list](https://github.com/Kall-3/LeetCode/tree/master/0143-reorder-list) |
 | [0206-reverse-linked-list](https://github.com/Kall-3/LeetCode/tree/master/0206-reverse-linked-list) |
 <!---LeetCode Topics End-->
