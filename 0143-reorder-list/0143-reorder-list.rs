@@ -14,65 +14,57 @@
 //     }
 //   }
 // }
-
-use std::hint::unreachable_unchecked;
-
 impl Solution {
     pub fn reorder_list(head: &mut Option<Box<ListNode>>) {
-        
-        // Find how many nodes are in the list
-        let mut count = 0;
-        let mut list = &*head;
-
-        while let Some(node) = list {
-            list = &node.next;
-            count += 1;
-        }
-
-        // If there are less than two nodes, then there is nothing to do
-        if count <= 2 {
+        if head.is_none() || head.as_ref().unwrap().next.is_none() {
             return;
         }
 
-        // Reach the middle of the list in order to split in to two lists
-        let mut half = head.as_mut();
-        for _ in 0..count / 2 {
-            match half {
-                None => unsafe { unreachable_unchecked() },
-                Some(node) => {
-                    half = node.next.as_mut();
-                }
-            }
+        // Find mutable reference to middle
+        let mut len = 0;
+        let mut current = head.as_ref();
+
+        while let Some(node) = current {
+            current = node.next.as_ref();
+            len += 1;
         }
 
-        // Reverse the second half
-        let mut half = match half {
-            None => unsafe { unreachable_unchecked() },
-            Some(node) => node.next.take(),
-        };
+        let mut current = head.as_mut();
 
-        let mut reversed = ListNode::new(0);
-        while let Some(mut node) = half.take() {
-            half = node.next.take();
-            node.next = reversed.next.take();
-            reversed.next = Some(node);
+        for i in 0..(len + 1)/2 - 1 {
+            current = if let Some(node) = current {
+                node.next.as_mut()
+            } else {
+                return;
+            };
         }
 
-        let mut tail = match head.as_mut() {
-            None => unsafe { unreachable_unchecked() },
-            Some(node) => &mut node.next,
-        };
+        // Reverse second half
+        let mut prev = None;
+        let mut current = current.unwrap().next.take();
 
-        while tail.is_some() && reversed.next.is_some() {
-            let mut rev = reversed.next.take().unwrap();
-            reversed.next = rev.next.take();
+        while let Some(mut node) = current {
+            let next = node.next.take();
+            node.next = prev;
+            prev = Some(node);
+            current = next;
+        }
 
-            rev.next = tail.take();
-            *tail = Some(rev);
-            tail = &mut tail.as_mut().unwrap().next;
-            if let Some(node) = tail {
-                tail = &mut node.next;
-            }
+        // Merge halfs
+        let mut second_half = prev.take();
+
+        let mut current = head.as_mut();
+
+        while let (Some(node), Some(mut second)) = (current, second_half) {
+            let next = node.next.take();
+            let next_second = second.next.take();
+
+            second.next = next;
+            node.next = Some(second);
+
+            current = node.next.as_mut().unwrap().next.as_mut();
+
+            second_half = next_second;
         }
     }
-}       
+}
