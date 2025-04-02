@@ -15,40 +15,43 @@
 //   }
 // }
 impl Solution {
-    pub fn add_two_numbers(mut l1: Option<Box<ListNode>>, mut l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
 
+        let mut rest = 0;
         let mut num = 0;
-        let mut carry = 0;
-        let mut l3 = Some(Box::new(ListNode::new(0)));
-        let mut head = l3.as_mut();
 
-        let (mut l1, mut l2) = (l1.as_ref(), l2.as_ref());
-
+        let mut l1 = l1.as_ref();
+        let mut l2 = l2.as_ref();
+        
+        let mut head = Box::new(ListNode::new(0));
+        let mut tail = &mut head;
+        
         while l1.is_some() || l2.is_some() {
             num = 0;
 
             if let Some(node) = l1 {
-                num     += node.val;
-                l1      = node.next.as_ref();
+                num += node.val;
+                l1 = node.next.as_ref();
             }
 
             if let Some(node) = l2 {
-                num     += node.val;
-                l2      = node.next.as_ref();
+                num += node.val;
+                l2 = node.next.as_ref();
             }
 
-            num     += carry;
-            carry   = num / 10;
-            num     = num % 10;
+            num += rest;
+            rest = num / 10;
 
-            head.as_mut().unwrap().next = Some(Box::new(ListNode::new(num)));
-            head = head.unwrap().next.as_mut();
+            tail.next = Some(Box::new(ListNode::new(num % 10)));
+
+            tail = tail.next.as_mut().unwrap();
         }
 
-        if carry != 0 {
-            head.as_mut().unwrap().next = Some(Box::new(ListNode::new(carry)));
+
+        if rest > 0 {
+            tail.next = Some(Box::new(ListNode::new(rest)));
         }
-        
-        l3.unwrap().next
+
+        head.next
     }
 }
