@@ -20,6 +20,7 @@ My leetcode submitions
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/Kall-3/LeetCode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0238-product-of-array-except-self](https://github.com/Kall-3/LeetCode/tree/master/0238-product-of-array-except-self) |
 | [0239-sliding-window-maximum](https://github.com/Kall-3/LeetCode/tree/master/0239-sliding-window-maximum) |
+| [0287-find-the-duplicate-number](https://github.com/Kall-3/LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0739-daily-temperatures](https://github.com/Kall-3/LeetCode/tree/master/0739-daily-temperatures) |
 | [0792-binary-search](https://github.com/Kall-3/LeetCode/tree/master/0792-binary-search) |
@@ -35,6 +36,7 @@ My leetcode submitions
 | [0125-valid-palindrome](https://github.com/Kall-3/LeetCode/tree/master/0125-valid-palindrome) |
 | [0143-reorder-list](https://github.com/Kall-3/LeetCode/tree/master/0143-reorder-list) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/Kall-3/LeetCode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0287-find-the-duplicate-number](https://github.com/Kall-3/LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [0567-permutation-in-string](https://github.com/Kall-3/LeetCode/tree/master/0567-permutation-in-string) |
 ## Sorting
 |  |
@@ -113,6 +115,7 @@ My leetcode submitions
 | [0074-search-a-2d-matrix](https://github.com/Kall-3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/Kall-3/LeetCode/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/Kall-3/LeetCode/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0287-find-the-duplicate-number](https://github.com/Kall-3/LeetCode/tree/master/0287-find-the-duplicate-number) |
 | [0792-binary-search](https://github.com/Kall-3/LeetCode/tree/master/0792-binary-search) |
 | [0907-koko-eating-bananas](https://github.com/Kall-3/LeetCode/tree/master/0907-koko-eating-bananas) |
 | [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
@@ -160,4 +163,8 @@ My leetcode submitions
 | [0021-merge-two-sorted-lists](https://github.com/Kall-3/LeetCode/tree/master/0021-merge-two-sorted-lists) |
 | [0143-reorder-list](https://github.com/Kall-3/LeetCode/tree/master/0143-reorder-list) |
 | [0206-reverse-linked-list](https://github.com/Kall-3/LeetCode/tree/master/0206-reverse-linked-list) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0287-find-the-duplicate-number](https://github.com/Kall-3/LeetCode/tree/master/0287-find-the-duplicate-number) |
 <!---LeetCode Topics End-->
