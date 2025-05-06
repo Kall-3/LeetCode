@@ -1,133 +1,112 @@
 use std::collections::HashMap;
+use std::rc::Rc;
+use std::cell::RefCell;
 
-#[derive(Clone)]
 struct Node {
-    data:   i32,
-    next:   Option<Box<Node>>,
-    prev:   Option<*mut Node>,
-}
-
-struct LinkedList {
-    head:   Option<Box<Node>>, // MRU
-    tail:   Option<*mut Node>, // LRU
-}
-
-impl LinkedList {
-    fn new() -> Self {
-        Self {
-            head: None,
-            tail: None,
-        }
-    }
-
-    // Insert at head, MRU
-    fn push_front(&mut self, value: i32) -> *mut Node {
-        let mut new_node = Box::new( Node { data: value, next: None, prev: None } );
-        let mut head = self.head.take();
-
-        if let Some(ref mut head) = head {
-            head.prev = Some(&mut *new_node as *mut Node);
-        } else {
-            // New list, first element
-            self.tail = Some(&mut *new_node as *mut Node);
-        }
-
-        new_node.next = head;
-        let last = &mut *new_node as *mut Node;
-        self.head = Some(new_node);
-        last
-    }
-
-    fn pop_back(&mut self) -> Option<i32> {
-        if let Some(tail) = self.tail {
-            unsafe {
-                if let Some(prev) = (*tail).prev {
-                    self.tail = Some(prev);
-                    (*prev).next = None;
-                } else {
-                    self.head = None;
-                }
-                return Some((*tail).data)
-            }
-        }
-        None
-    }
-
-    fn remove(&mut self, node: *mut Node) {
-        let mut node = unsafe { &mut *node };
-
-        match (node.prev.take(), node.next.take()) {
-            // Patch ends together
-            (Some(prev), Some(mut next)) => unsafe {
-                next.prev = Some(prev);
-                (*prev).next = Some(next);
-            }
-            // Tail
-            (Some(prev), None) => {
-                unsafe { (*prev).next = None; }
-                self.tail = Some(prev);
-            }
-            // Head
-            (None, Some(mut next)) => {
-                next.prev = None;
-                self.head = Some(next);
-            }
-            // Single node
-            (None, None) => {
-                self.head = None;
-                self.tail = None;
-            }
-        }
-    }
-
+    key: i32,
+    val: i32,
+    next: Option<Rc<RefCell<Node>>>,
+    prev: Option<Rc<RefCell<Node>>>,
 }
 
 struct LRUCache {
-    capacity:   usize,
-    map:        HashMap<i32, (i32, *mut Node)>,
-    list:       LinkedList,
+    capacity: usize,
+    lru: HashMap<i32, Rc<RefCell<Node>>>,
+    head: Rc<RefCell<Node>>,
+    tail: Rc<RefCell<Node>>,
 }
 
 impl LRUCache {
-
     fn new(capacity: i32) -> Self {
-        LRUCache {
-            capacity:   capacity as usize,
-            map:        HashMap::new(),
-            list:       LinkedList::new(),
-        }
+        let lru = LRUCache {
+            capacity: capacity as usize,
+            lru: HashMap::new(),
+            head: Rc::new(RefCell::new(Node {
+                key: 0,
+                val: 0,
+                next: None,
+                prev: None,
+            })),
+            tail: Rc::new(RefCell::new(Node {
+                key: 0,
+                val: 0,
+                next: None,
+                prev: None,
+            })),
+        };
+        lru.head.borrow_mut().next = Some(lru.tail.clone());
+        lru.tail.borrow_mut().prev = Some(lru.head.clone());
+        lru
     }
     
     fn get(&mut self, key: i32) -> i32 {
-
-        if let Some((value, node)) = self.map.remove(&key) {
-            // Remove old priority
-            self.list.remove(node);
-
-            // Insert again as MRU
-            let node = self.list.push_front(key);
-            self.map.insert(key, (value, node));
-            value
-        } else {
-            -1
+        if let Some(node_rc) = self.lru.get(&key).cloned() {
+            let val = node_rc.borrow().val;
+            self.remove(node_rc.clone());
+            self.insert_head(node_rc);
+            return val;
         }
+        -1
     }
     
     fn put(&mut self, key: i32, value: i32) {
+        let new_rc = Rc::new(RefCell::new(Node {
+            key: key,
+            val: value,
+            next: None,
+            prev: None,
+        }));
 
-        // If entry exists, remove and add again later
-        if let Some((_, node)) = self.map.remove(&key) {
-            self.list.remove(node);
-        }
-        // If capacity is exceded, pop LRU
-        else if self.map.len() == self.capacity {
-            if let Some(key) = self.list.pop_back() {
-                self.map.remove(&key);
+        if self.lru.contains_key(&key) {
+            let old = self.lru.remove(&key);
+            self.lru.insert(key, new_rc.clone());
+            if let Some(old_rc) = old {
+                self.remove(old_rc);
+            }
+        } else if self.lru.len() == self.capacity {
+            let old = self.tail.borrow().prev.clone();
+            if let Some(old_rc) = old {
+                self.lru.remove(&old_rc.borrow().key);
+                self.remove(old_rc.clone());
             }
         }
-        // Insert new entry at most recent place
-        let node = self.list.push_front(key);
-        self.map.insert(key, (value, node));
 
+        self.lru.insert(key, new_rc.clone());
+        self.insert_head(new_rc);
+    }
+
+    fn remove(&mut self, node_rc: Rc<RefCell<Node>>) {
+        let next = node_rc.borrow().next.clone();
+        let prev = node_rc.borrow().prev.clone();
+
+        if let Some(ref next_rc) = next {
+            next_rc.borrow_mut().prev = prev.clone();
+        }
+
+        if let Some(ref prev_rc) = prev {
+            prev_rc.borrow_mut().next = next.clone();
+        }
+
+        node_rc.borrow_mut().next = None;
+        node_rc.borrow_mut().prev = None;
+    }
+
+    fn insert_head(&mut self, node_rc: Rc<RefCell<Node>>) {
+        let old = self.head.borrow().next.clone();
+
+        if let Some(ref old_rc) = old {
+            old_rc.borrow_mut().prev = Some(node_rc.clone());
+        }
+        self.head.borrow_mut().next = Some(node_rc.clone());
+
+        node_rc.borrow_mut().next = old;
+        node_rc.borrow_mut().prev = Some(self.head.clone());
     }
 }
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * let obj = LRUCache::new(capacity);
+ * let ret_1: i32 = obj.get(key);
+ * obj.put(key, value);
+ */
