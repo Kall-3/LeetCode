@@ -87,6 +87,7 @@ My leetcode submitions
 ## Design
 |  |
 | ------- |
+| [0146-lru-cache](https://github.com/Kall-3/LeetCode/tree/master/0146-lru-cache) |
 | [0155-min-stack](https://github.com/Kall-3/LeetCode/tree/master/0155-min-stack) |
 | [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
 ## Math
@@ -104,6 +105,7 @@ My leetcode submitions
 | [0003-longest-substring-without-repeating-characters](https://github.com/Kall-3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0036-valid-sudoku](https://github.com/Kall-3/LeetCode/tree/master/0036-valid-sudoku) |
 | [0076-minimum-window-substring](https://github.com/Kall-3/LeetCode/tree/master/0076-minimum-window-substring) |
+| [0146-lru-cache](https://github.com/Kall-3/LeetCode/tree/master/0146-lru-cache) |
 | [0424-longest-repeating-character-replacement](https://github.com/Kall-3/LeetCode/tree/master/0424-longest-repeating-character-replacement) |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0567-permutation-in-string](https://github.com/Kall-3/LeetCode/tree/master/0567-permutation-in-string) |
@@ -155,6 +157,7 @@ My leetcode submitions
 | [0019-remove-nth-node-from-end-of-list](https://github.com/Kall-3/LeetCode/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0021-merge-two-sorted-lists](https://github.com/Kall-3/LeetCode/tree/master/0021-merge-two-sorted-lists) |
 | [0143-reorder-list](https://github.com/Kall-3/LeetCode/tree/master/0143-reorder-list) |
+| [0146-lru-cache](https://github.com/Kall-3/LeetCode/tree/master/0146-lru-cache) |
 | [0206-reverse-linked-list](https://github.com/Kall-3/LeetCode/tree/master/0206-reverse-linked-list) |
 ## Recursion
 |  |
@@ -167,4 +170,8 @@ My leetcode submitions
 |  |
 | ------- |
 | [0287-find-the-duplicate-number](https://github.com/Kall-3/LeetCode/tree/master/0287-find-the-duplicate-number) |
+## Doubly-Linked List
+|  |
+| ------- |
+| [0146-lru-cache](https://github.com/Kall-3/LeetCode/tree/master/0146-lru-cache) |
 <!---LeetCode Topics End-->
