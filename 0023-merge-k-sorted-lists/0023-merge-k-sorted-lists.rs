@@ -1,52 +1,60 @@
-use std::collections::BinaryHeap;
-use std::cmp::Ordering;
+// Definition for singly-linked list.
+// #[derive(PartialEq, Eq, Clone, Debug)]
+// pub struct ListNode {
+//   pub val: i32,
+//   pub next: Option<Box<ListNode>>
+// }
+// 
+// impl ListNode {
+//   #[inline]
+//   fn new(val: i32) -> Self {
+//     ListNode {
+//       next: None,
+//       val
+//     }
+//   }
+// }
 
-impl PartialOrd<ListNode> for ListNode
-{
-    fn partial_cmp(&self, other: &ListNode) -> Option<Ordering>
-    {
+use std::collections::BinaryHeap;
+use std::cmp::{Reverse, Ordering};
+
+impl PartialOrd for ListNode {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         other.val.partial_cmp(&self.val)
     }
 }
 
-impl Ord for ListNode
-{
-    fn cmp(&self, other: &ListNode) -> Ordering
-    {
-        other.val.cmp(&self.val)
+impl Ord for ListNode {
+    fn cmp(&self, other: &ListNode) -> Ordering {
+        other.partial_cmp(other).unwrap()
     }
 }
 
-impl Solution
-{
-    pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
-    {
-        let mut heap: BinaryHeap<Box<ListNode>> = BinaryHeap::with_capacity(lists.len());
+impl Solution {
+    pub fn merge_k_lists(mut lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
+        let mut heap: BinaryHeap<Box<ListNode>> = BinaryHeap::new();
 
-        // Initial nodes on heap
-        for list in lists {
-            if let Some(head) = list {
-                heap.push(head);
+        let mut head = Some(Box::new(ListNode::new(0)));
+        for mut list in lists {
+            head = list.take();
+
+            while let Some(mut node) = head {
+                let next = node.next.take();
+                heap.push(node);
+                head = next;
             }
         }
 
-        // Dummy and current, keep track of head and current node in result
-        let mut dummy   = Box::new(ListNode::new(0));
-        let mut curr    = &mut dummy;
+        let mut dummy = Some(Box::new(ListNode::new(0)));
+        let mut cur = dummy.as_mut();
 
-        // Iterate through heap until empty
         while let Some(node) = heap.pop() {
-
-            let mut new_node = Box::new(ListNode::new(node.val));
-            curr.next = Some(new_node);
-            curr = curr.next.as_mut().unwrap();
-
-            // Push next element in list to heap
-            if let Some(next) = node.next {
-                heap.push(next);
+            if let Some(current) = cur {
+                current.next = Some(node);
+                cur = current.next.as_mut();
             }
         }
-        
-        dummy.next
+
+        dummy.unwrap().next
     }
 }
