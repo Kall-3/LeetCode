@@ -1,13 +1,15 @@
-use std::boxed::Box;
+use std::{rc::Rc, cell::RefCell};
 
-struct Node {
-    children: [Option<Box<Node>>; 26],
+type Node = Rc<RefCell<TreeNode>>;
+
+struct TreeNode {
+    children: [Option<Node>; 26],
     is_end: bool,
 }
 
-impl Node {
+impl TreeNode {
     fn new() -> Self {
-        Node {
+        TreeNode {
             children: std::array::from_fn(|_| None),
             is_end: false,
         }
@@ -21,45 +23,51 @@ struct Trie {
 impl Trie {
     fn new() -> Self {
         Trie {
-            root: Node::new(),
+            root: Rc::new(RefCell::new(TreeNode::new())),
         }
     }
     
     fn insert(&mut self, word: String) {
-        let mut node = &mut self.root;
+        let mut node = self.root.clone();
 
         for b in word.bytes() {
             let idx = (b - b'a') as usize;
-            let slot = &mut node.children[idx];
-            node = slot.get_or_insert(Box::new(Node::new())).as_mut();
+            let next = {
+                node.borrow_mut().children[idx].get_or_insert(Rc::new(RefCell::new(TreeNode::new()))).clone()
+            };
+            node = next;
         }
 
-        node.is_end = true;
+        node.borrow_mut().is_end = true;
     }
     
     fn search(&self, word: String) -> bool {
-        let mut node = &self.root;
-
+        let mut node = self.root.clone();
         for b in word.bytes() {
             let idx = (b - b'a') as usize;
-            match &node.children[idx] {
-                Some(next) => node = next,
-                None => return false,
-            }
+            let next = {
+                match &node.borrow().children[idx] {
+                    Some(next) => next.clone(),
+                    None => { return false },
+                }
+            };
+            node = next;
         }
 
-        node.is_end
+        node.borrow().is_end
     }
     
     fn starts_with(&self, prefix: String) -> bool {
-        let mut node = &self.root;
-
+        let mut node = self.root.clone();
         for b in prefix.bytes() {
             let idx = (b - b'a') as usize;
-            match &node.children[idx] {
-                Some(next) => node = next,
-                None => return false,
-            }
+            let next = {
+                match &node.borrow().children[idx] {
+                    Some(next) => next.clone(),
+                    None => { return false },
+                }
+            };
+            node = next;
         }
 
         true
