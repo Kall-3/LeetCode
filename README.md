@@ -83,6 +83,7 @@ My leetcode submitions
 | [0022-generate-parentheses](https://github.com/Kall-3/LeetCode/tree/master/0022-generate-parentheses) |
 | [0076-minimum-window-substring](https://github.com/Kall-3/LeetCode/tree/master/0076-minimum-window-substring) |
 | [0125-valid-palindrome](https://github.com/Kall-3/LeetCode/tree/master/0125-valid-palindrome) |
+| [0208-implement-trie-prefix-tree](https://github.com/Kall-3/LeetCode/tree/master/0208-implement-trie-prefix-tree) |
 | [0424-longest-repeating-character-replacement](https://github.com/Kall-3/LeetCode/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/Kall-3/LeetCode/tree/master/0567-permutation-in-string) |
 | [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
@@ -91,6 +92,7 @@ My leetcode submitions
 | ------- |
 | [0146-lru-cache](https://github.com/Kall-3/LeetCode/tree/master/0146-lru-cache) |
 | [0155-min-stack](https://github.com/Kall-3/LeetCode/tree/master/0155-min-stack) |
+| [0208-implement-trie-prefix-tree](https://github.com/Kall-3/LeetCode/tree/master/0208-implement-trie-prefix-tree) |
 | [1023-time-based-key-value-store](https://github.com/Kall-3/LeetCode/tree/master/1023-time-based-key-value-store) |
 ## Math
 |  |
@@ -109,6 +111,7 @@ My leetcode submitions
 | [0076-minimum-window-substring](https://github.com/Kall-3/LeetCode/tree/master/0076-minimum-window-substring) |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/Kall-3/LeetCode/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0146-lru-cache](https://github.com/Kall-3/LeetCode/tree/master/0146-lru-cache) |
+| [0208-implement-trie-prefix-tree](https://github.com/Kall-3/LeetCode/tree/master/0208-implement-trie-prefix-tree) |
 | [0424-longest-repeating-character-replacement](https://github.com/Kall-3/LeetCode/tree/master/0424-longest-repeating-character-replacement) |
 | [0496-next-greater-element-i](https://github.com/Kall-3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0567-permutation-in-string](https://github.com/Kall-3/LeetCode/tree/master/0567-permutation-in-string) |
@@ -262,4 +265,8 @@ My leetcode submitions
 | [0098-validate-binary-search-tree](https://github.com/Kall-3/LeetCode/tree/master/0098-validate-binary-search-tree) |
 | [0230-kth-smallest-element-in-a-bst](https://github.com/Kall-3/LeetCode/tree/master/0230-kth-smallest-element-in-a-bst) |
 | [0235-lowest-common-ancestor-of-a-binary-search-tree](https://github.com/Kall-3/LeetCode/tree/master/0235-lowest-common-ancestor-of-a-binary-search-tree) |
+## Trie
+|  |
+| ------- |
+| [0208-implement-trie-prefix-tree](https://github.com/Kall-3/LeetCode/tree/master/0208-implement-trie-prefix-tree) |
 <!---LeetCode Topics End-->
