@@ -12,15 +12,6 @@ impl Node {
     }
 }
 
-impl std::fmt::Debug for Node {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        f.debug_struct("Node")
-            .field("children", &self.children)
-            .field("is_end", &self.is_end)
-            .finish()
-    }
-}
-
 struct WordDictionary {
     root: Node,
 }
@@ -46,31 +37,27 @@ impl WordDictionary {
     
     fn search(&self, word: String) -> bool {
         let mut node = &self.root;
-        Self::search_rec(&mut node, word)
+        Self::search_rec(&mut node, word.as_bytes())
     }
 
-    fn search_rec(mut node: &Node, word: String) -> bool {
-        for (i, b) in word.bytes().enumerate() {
-            if (b - b'.') == 0 {
-                // check all possible branches
-                println!("For word: {word}");
-                return node.children
+    fn search_rec(start: &Node, word: &[u8]) -> bool {
+        let mut cur = start;
+        for (i, &b) in word.iter().enumerate() {
+            if b == b'.' {
+                return cur.children
                     .iter()
                     .filter_map(|opt| opt.as_ref())
-                    .any(|mut child| {
-                        // println!("  found child {}", (b'a' + j as u8) as char);
-                        Self::search_rec(&mut child, word[(i+1)..].to_string())
-                    });
+                    .any(|child| Self::search_rec(child, &word[i+1..]));
             }
 
             let idx = (b - b'a') as usize;
-            match &node.children[idx] {
-                Some(next) => node = next,
+            match &cur.children[idx] {
+                Some(next) => cur = next,
                 None => return false,
             };
         }
 
-        node.is_end
+        cur.is_end
     }
 }
 
